@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>jia.su</Authors>
+    <Description>XFramwork configuration server contract
+configuration query and modify</Description>
+    <Copyright>Copyright 2019</Copyright>
+    <PackageReleaseNotes>Initial release</PackageReleaseNotes>
+  </PropertyGroup>
+
+</Project>

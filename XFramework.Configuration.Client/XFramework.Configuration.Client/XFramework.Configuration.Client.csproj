@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>jia.su</Authors>
+    <Company>jia.su</Company>
+    <Description>XFramework configuration service client
+Query and modify configuration, using long pooling way to wait for configuration changed signal</Description>
+    <Copyright>Copyright 2019</Copyright>
+    <PackageReleaseNotes>fix bugs : get wrong enviroment name</PackageReleaseNotes>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
+    <Version>1.0.3</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Hosting.Abstractions" Version="2.1.1" />
+    <PackageReference Include="XFramework.Contract" Version="1.0.1" />
+    <PackageReference Include="XFramework.Core" Version="1.0.0" />
+    <PackageReference Include="XFramework.Core.Abstractions" Version="1.0.0" />
+    <PackageReference Include="XFramework.Soa.Abstractions" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Extensions.Logging.Abstractions">
+      <HintPath>..\..\..\..\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.extensions.logging.abstractions\2.1.1\lib\netstandard2.0\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

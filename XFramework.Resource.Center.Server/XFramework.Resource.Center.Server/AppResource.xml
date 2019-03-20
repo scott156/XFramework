@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AppResource>
+  <Applications>
+    <AppInfo>
+      <AppId>10000</AppId>
+      <Description>PDF生成服务</Description>
+      <Owners>
+        <string>jiasu</string>
+      </Owners>
+      <AppInstances>
+        <InstanceInfo>
+          <InstanceId>1f40e4fb-2429-40fb-baf9-97267d74625</InstanceId>
+          <Cpu>2</Cpu>
+          <Memory>2048</Memory>
+          <ResourceId>127.0.0.1</ResourceId>
+          <Port>12000</Port>
+        </InstanceInfo>
+      </AppInstances>
+    </AppInfo>
+  </Applications>
+</AppResource>

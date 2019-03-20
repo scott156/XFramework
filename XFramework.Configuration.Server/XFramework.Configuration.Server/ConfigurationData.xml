@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ConfigurationData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Configurations>
+    <ConfigurationContent>
+      <Filename>global.properties</Filename>
+      <Version>1</Version>
+      <Properties>
+        <ConfigurationItem Key="ResourceCenter" Value="http://staging.resource.colorstudio.com.cn" />
+        <ConfigurationItem Key="SoaCenter" Value="http://staging.soa.colorstudio.com.cn" />
+        <ConfigurationItem Key="LuceneServer" Value="http://staging.lucene.colorstudio.com.cn" />
+      </Properties>
+      <LastModifyDate>2019-02-03T14:30:36.7052748+08:00</LastModifyDate>
+    </ConfigurationContent>
+    <ConfigurationContent>
+      <Filename>10001.properties</Filename>
+      <Version>3</Version>
+      <Properties>
+        <ConfigurationItem Key="DisableGradeSwitch" Value="false" />
+      </Properties>
+      <LastModifyDate>2019-02-28T12:41:27.7229346+08:00</LastModifyDate>
+    </ConfigurationContent>
+    <ConfigurationContent>
+      <Filename>10002.properties</Filename>
+      <Version>1</Version>
+      <Properties>
+        <ConfigurationItem Key="Timeout" Value="60" />
+      </Properties>
+      <LastModifyDate>2019-02-03T14:30:36.7052748+08:00</LastModifyDate>
+    </ConfigurationContent>
+    <ConfigurationContent>
+      <Filename>dal.connection.properties</Filename>
+      <Version>1</Version>
+      <Properties>
+        <ConfigurationItem Key="EZLearnDB_W" Value="Server=rm-uf6yx8j18g95c059x6o.mysql.rds.aliyuncs.com;database=ezlearn_db;uid=dev_lzh;pwd=EZLearn579#" />
+      </Properties>
+      <LastModifyDate>2019-02-03T14:30:36.7052748+08:00</LastModifyDate>
+    </ConfigurationContent>
+    <ConfigurationContent>
+      <Filename>soa.pdfgenerator.properties</Filename>
+      <Version>12</Version>
+      <Properties>
+        <ConfigurationItem Key="ServerList" Value="" />
+      </Properties>
+      <LastModifyDate>2019-02-21T22:36:49.6116284+08:00</LastModifyDate>
+    </ConfigurationContent>
+    <ConfigurationContent>
+      <Filename>10002.status.properties</Filename>
+      <Version>4</Version>
+      <Properties>
+        <ConfigurationItem Key="3690724e-e627-447d-bec2-999c56f53b9d" Value="2" />
+      </Properties>
+      <LastModifyDate>2019-03-06T14:16:17.2488862+08:00</LastModifyDate>
+    </ConfigurationContent>
+    <ConfigurationContent>
+      <Filename>soa.user.properties</Filename>
+      <Version>4</Version>
+      <Properties>
+        <ConfigurationItem Key="ServerList" Value="47.100.39.176:12001" />
+      </Properties>
+      <LastModifyDate>2019-03-06T14:16:17.2679297+08:00</LastModifyDate>
+    </ConfigurationContent>
+    <ConfigurationContent>
+      <Filename>10000.properties</Filename>
+      <Version>4</Version>
+      <Properties>
+        <ConfigurationItem Key="Timeout" Value="60" />
+        <ConfigurationItem Key="PdfUri" Value="http://47.100.39.176:12000/pdf/" />
+      </Properties>
+      <LastModifyDate>2019-03-18T21:57:19.9972032+08:00</LastModifyDate>
+    </ConfigurationContent>
+    <ConfigurationContent>
+      <Filename>10000.status.properties</Filename>
+      <Version>17</Version>
+      <Properties>
+        <ConfigurationItem Key="6381a910-3c4b-43eC-8926-ffb63eb6d92e" Value="2" />
+      </Properties>
+      <LastModifyDate>2019-03-18T22:59:11.6171217+08:00</LastModifyDate>
+    </ConfigurationContent>
+  </Configurations>
+</ConfigurationData>

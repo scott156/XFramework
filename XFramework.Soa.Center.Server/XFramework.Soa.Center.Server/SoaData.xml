@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoaResource xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SoaResources>
+    <SoaInfo>
+      <ServiceId>pdfgenerator</ServiceId>
+      <AppId>10000</AppId>
+      <Description>PDF生成服务</Description>
+      <RegisteredResources />
+    </SoaInfo>
+    <SoaInfo>
+      <ServiceId>user</ServiceId>
+      <AppId>10002</AppId>
+      <Description>Avatar用户服务</Description>
+    </SoaInfo>
+  </SoaResources>
+</SoaResource>

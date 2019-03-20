@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="XFramework.Bom" Version="1.0.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\XFramework.Resource.Center.Server.Business\XFramework.Resource.Center.Server.Business.csproj" />
+    <ProjectReference Include="..\XFramework.Resource.Center.Server.Contract\XFramework.Resource.Center.Server.Contract.csproj" />
+  </ItemGroup>
+
+</Project>

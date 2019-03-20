@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Authors>jia.su</Authors>
+    <Company>jia.su</Company>
+    <Description>XFramework common contract, includes configuration center and soa center contract</Description>
+    <Copyright>Copyright 2019</Copyright>
+    <PackageReleaseNotes>Add resouce center request</PackageReleaseNotes>
+    <Version>1.0.1</Version>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="XFramework.Soa.Abstractions" Version="1.0.0" />
+  </ItemGroup>
+
+</Project>

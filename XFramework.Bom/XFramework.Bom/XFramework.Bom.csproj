@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyVersion>1.0.8.0</AssemblyVersion>
+    <FileVersion>1.0.8.0</FileVersion>
+    <Authors>jia.su</Authors>
+    <Description>XFramework Suite
+XFramework.Core.Abstractions
+XFramework.Core
+XFramework.Soa.Abstractions
+XFramework.Soa
+XFramework.Configuration.Client
+XFramework.Dal</Description>
+    <Copyright>Copyright 2019</Copyright>
+    <PackageReleaseNotes>Upgrade configuration client and get the correct enviroment name</PackageReleaseNotes>
+    <Version>1.0.8</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="XFramework.Configuration.Client" Version="1.0.3" />
+    <PackageReference Include="XFramework.Dal" Version="1.0.2" />
+    <PackageReference Include="XFramework.Soa" Version="1.0.8" />
+  </ItemGroup>
+
+</Project>
