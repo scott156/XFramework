@@ -6,6 +6,7 @@
     <Copyright>Copyright 2019</Copyright>
     <Authors>jia.su</Authors>
     <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>

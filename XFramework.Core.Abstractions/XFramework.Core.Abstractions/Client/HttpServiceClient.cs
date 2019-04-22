@@ -41,7 +41,7 @@ namespace XFramework.Core.Abstractions.Client
         {
             using (var client = new HttpClient())
             {
-                logger.Debug($"http request : {JsonConvert.SerializeObject(request, Formatting.Indented)}");
+                logger.Debug($"http request : {JsonConvert.SerializeObject(request, Formatting.None)}");
                 var sw = new Stopwatch();
                 sw.Start();
 
@@ -63,7 +63,7 @@ namespace XFramework.Core.Abstractions.Client
 
                 var resp = serializer.Deserialize<Resp>(buffer);
                 logger.Debug($"Total elapsed : {sw.Elapsed.TotalSeconds.ToString("0.000")}s, " +
-                    $"response : {Environment.NewLine}{JsonConvert.SerializeObject(resp, Formatting.Indented)}");
+                    $"response : {Environment.NewLine}{JsonConvert.SerializeObject(resp, Formatting.None)}");
 
                 return resp;
             }
