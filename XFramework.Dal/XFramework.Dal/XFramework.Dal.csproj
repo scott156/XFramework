@@ -14,7 +14,7 @@ support orm parameterize 'IN'</PackageReleaseNotes>
 
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.15" />
-    <PackageReference Include="XFramework.Configuration.Client" Version="1.0.0" />
+    <PackageReference Include="XFramework.Configuration.Client" Version="1.0.3" />
   </ItemGroup>
 
   <ItemGroup>
