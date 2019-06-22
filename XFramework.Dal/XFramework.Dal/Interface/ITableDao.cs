@@ -20,6 +20,6 @@ namespace XFramework.Dal.Interface
 
         Task<int> Delete<T>(T entity) where T : class, new();
 
-        Task<List<T>> QueryLike<T>(IDatabaseParameterLink group) where T : class, new();
+        Task<List<T>> QueryLike<T>(IDatabaseParameterLink group, int? recordCount = null) where T : class, new();
     }
 }

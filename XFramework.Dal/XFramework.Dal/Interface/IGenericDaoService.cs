@@ -53,7 +53,7 @@ namespace XFramework.Dal.Interface
         /// <param name="sql"></param>
         /// <param name="parameters"></param>
         /// <returns></returns>
-        Task<T> QueryFirst<T>(string sql, IDataParameterCollection parameters) where T : class, new();
+        Task<T> QueryFirst<T>(IDatabaseParameterLink parameters) where T : class, new();
 
         /// <summary>
         /// 查询第一条记录

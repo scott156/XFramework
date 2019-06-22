@@ -20,7 +20,7 @@ namespace XFramework.Dal.SqlBuilder
         /// <param name="criteria"></param>
         /// <param name="recordCount"></param>
         /// <returns></returns>
-        (string, List<DatabaseParameter>) BuildSelect<T>(IDatabaseParameterLink link) where T : new();
+        (string, List<DatabaseParameter>) BuildSelect<T>(IDatabaseParameterLink link, int? recordCount = null) where T : new();
 
         /// <summary>
         /// 组装Insert

@@ -53,11 +53,15 @@ namespace XFramework.Dal
             return await dao.QueryByPk(criteria);
         }
 
-        public async Task<T> QueryFirst<T>(string sql, IDataParameterCollection parameters) where T : class, new()
+        public async Task<T> QueryFirst<T>(IDatabaseParameterLink parameters) where T : class, new()
         {
-            await Task.Run(() => { });
+            var list = await dao.QueryLike<T>(parameters, 1);
+            if (list == null || list.Count == 0)
+            {
+                return null;
+            }
 
-            throw new System.NotImplementedException();
+            return list[0];
         }
 
         public async Task<T> QueryFirst<T>(T criteria) where T : class, new()

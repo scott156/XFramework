@@ -185,13 +185,13 @@ namespace XFramework.Dal
             return result.ReturnCode;
         }
 
-        public async Task<List<T>> QueryLike<T>(IDatabaseParameterLink link) where T : class, new()
+        public async Task<List<T>> QueryLike<T>(IDatabaseParameterLink link, int? recordCount = null) where T : class, new()
         {
             var mapper = EntityMetaDataMapper.GetInstance();
 
             // 获取组装好的sql和参数
             (string sql, List<DatabaseParameter> parameters) =
-                SqlBuilderFactory.GetInstance<T>().BuildSelect<T>(link);
+                SqlBuilderFactory.GetInstance<T>().BuildSelect<T>(link, recordCount);
 
             var dataSet = await DalClientFactory.GetClient(GetLogicDatabaseName<T>()).Query(sql, parameters);
 

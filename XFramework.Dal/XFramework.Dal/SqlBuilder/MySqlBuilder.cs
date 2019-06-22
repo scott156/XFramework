@@ -203,19 +203,29 @@ namespace XFramework.Dal.SqlBuilder
             return (sb.ToString(), parameters);
         }
 
-        public (string, List<DatabaseParameter>) BuildSelect<T>(IDatabaseParameterLink link) where T : new()
+        public (string, List<DatabaseParameter>) BuildSelect<T>(IDatabaseParameterLink link, int? recordCount = null) where T : new()
         {
             // 先组装出基本Sql语句
             var sql = GetPrimarySql<T>();
 
             if (link == null)
             {
+                if (recordCount != null && recordCount > 0)
+                {
+                    sql += $" limit {recordCount};";
+                }
+
                 return (sql, null);
             }
 
             (var subsql, var parameters) = Build(link);
+            sql = string.Concat(sql, " WHERE ", subsql);
+            if (recordCount != null && recordCount > 0)
+            {
+                sql += $" limit {recordCount};";
+            }
 
-            return (string.Concat(sql, " WHERE ", subsql), parameters);
+            return (sql, parameters);
         }
 
         public (string, List<DatabaseParameter>) Build(IDatabaseParameterLink link)

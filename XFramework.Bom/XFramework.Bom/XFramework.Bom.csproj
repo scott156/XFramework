@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
-    <AssemblyVersion>1.0.9.0</AssemblyVersion>
-    <FileVersion>1.0.9.0</FileVersion>
+    <AssemblyVersion>1.0.10.0</AssemblyVersion>
+    <FileVersion>1.0.10.0</FileVersion>
     <Authors>jia.su</Authors>
     <Description>XFramework Suite
 XFramework.Core.Abstractions
@@ -13,15 +13,15 @@ XFramework.Soa
 XFramework.Configuration.Client
 XFramework.Dal</Description>
     <Copyright>Copyright 2019</Copyright>
-    <PackageReleaseNotes>Upgrade xframework core abstraction</PackageReleaseNotes>
-    <Version>1.0.9</Version>
+    <PackageReleaseNotes>Upgrade dal</PackageReleaseNotes>
+    <Version>1.0.10</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="XFramework.Configuration.Client" Version="1.0.3" />
     <PackageReference Include="XFramework.Core.Abstractions" Version="1.0.1" />
-    <PackageReference Include="XFramework.Dal" Version="1.0.2" />
+    <PackageReference Include="XFramework.Dal" Version="1.0.3" />
     <PackageReference Include="XFramework.Soa" Version="1.0.8" />
   </ItemGroup>
 

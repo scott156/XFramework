@@ -7,9 +7,8 @@
     <Authors>jia.su</Authors>
     <Description>XFramework database access layer, ORM</Description>
     <Copyright>Copyright 2019</Copyright>
-    <PackageReleaseNotes>Support customized database parameters,
-support orm parameterize 'IN'</PackageReleaseNotes>
-    <Version>1.0.2</Version>
+    <PackageReleaseNotes>Support query first</PackageReleaseNotes>
+    <Version>1.0.3</Version>
   </PropertyGroup>
 
   <ItemGroup>
