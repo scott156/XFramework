@@ -7,8 +7,8 @@
     <Authors>jia.su</Authors>
     <Description>XFramework database access layer, ORM</Description>
     <Copyright>Copyright 2019</Copyright>
-    <PackageReleaseNotes>Support query first</PackageReleaseNotes>
-    <Version>1.0.3</Version>
+    <PackageReleaseNotes>Support int as identity</PackageReleaseNotes>
+    <Version>1.0.4</Version>
   </PropertyGroup>
 
   <ItemGroup>

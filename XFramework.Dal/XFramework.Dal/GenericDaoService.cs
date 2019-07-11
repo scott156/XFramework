@@ -53,6 +53,11 @@ namespace XFramework.Dal
             return await dao.QueryByPk(criteria);
         }
 
+        public async Task<T> QueryByPk<T>(int identity) where T : class, new()
+        {
+            return await dao.QueryByPk<T>(identity);
+        }
+
         public async Task<T> QueryFirst<T>(IDatabaseParameterLink parameters) where T : class, new()
         {
             var list = await dao.QueryLike<T>(parameters, 1);

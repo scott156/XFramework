@@ -14,14 +14,14 @@ XFramework.Configuration.Client
 XFramework.Dal</Description>
     <Copyright>Copyright 2019</Copyright>
     <PackageReleaseNotes>Upgrade dal</PackageReleaseNotes>
-    <Version>1.0.10</Version>
+    <Version>1.0.11</Version>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="XFramework.Configuration.Client" Version="1.0.3" />
     <PackageReference Include="XFramework.Core.Abstractions" Version="1.0.1" />
-    <PackageReference Include="XFramework.Dal" Version="1.0.3" />
+    <PackageReference Include="XFramework.Dal" Version="1.0.4" />
     <PackageReference Include="XFramework.Soa" Version="1.0.8" />
   </ItemGroup>
 

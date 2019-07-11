@@ -13,6 +13,14 @@ namespace XFramework.Dal.Interface
         /// <typeparam name="T"></typeparam>
         /// <param name="identity"></param>
         /// <returns></returns>
+        Task<T> QueryByPk<T>(int identity) where T : class, new();
+
+        /// <summary>
+        /// 根据主键查询, 支持主键为long类型的查询
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="identity"></param>
+        /// <returns></returns>
         Task<T> QueryByPk<T>(long identity) where T : class, new();
 
         /// <summary>

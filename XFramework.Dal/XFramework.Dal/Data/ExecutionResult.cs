@@ -3,6 +3,6 @@
     public class ExecutionResult
     {
         public int ReturnCode { get; set; }
-        public long Identity { get; set; }
+        public ulong Identity { get; set; }
     }
 }

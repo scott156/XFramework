@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using XFramework.Core.Abstractions.Error;
 using XFramework.Dal.DalClient;
@@ -23,7 +24,7 @@ namespace XFramework.Dal
         {
             // 如果为空，默认使用泛型参数T的数据库名称 
         }
-        
+
         /// <summary>
         /// 条件查询
         /// </summary>
@@ -35,7 +36,7 @@ namespace XFramework.Dal
             var mapper = EntityMetaDataMapper.GetInstance();
 
             // 获取组装好的sql和参数
-            (string sql, List<DatabaseParameter> parameters) = 
+            (string sql, List<DatabaseParameter> parameters) =
                 SqlBuilderFactory.GetInstance<T>().BuildSelect(criteria, recordCount);
 
             var logicName = databaseName;
@@ -109,21 +110,27 @@ namespace XFramework.Dal
             {
                 throw new DalException(ErrorCode.PrimaryKeyIsEmpty, "Primary key is empty");
             }
-            
+
             var info = EntityMetaDataMapper.GetInstance().Get<T>();
+
             // 检查主键类型，必须为字符串
             var identity = info.Columns.Find(p => p.Attribute.PrimaryKey == true);
-            if (identity.ColumnProperty.PropertyType != typeof(PKType))
+            var property = identity.ColumnProperty.PropertyType;
+
+            if (property == typeof(PKType) ||
+                (property.IsGenericType &&
+                property.GetGenericTypeDefinition() == typeof(Nullable<>) &&
+                property.GetGenericArguments()[0] == typeof(PKType)))
             {
-                throw new DalException(ErrorCode.PrimaryKeyIsEmpty,
-                    $"Primary key type mismatch, source type : {typeof(PKType)}, " +
-                    $"target type : {identity.ColumnProperty.PropertyType}");
+                var criteria = new T();
+                identity.ColumnProperty.SetValue(criteria, value);
+
+                return criteria;
             }
 
-            var criteria = new T();
-            identity.ColumnProperty.SetValue(criteria, value);
-
-            return criteria;
+            throw new DalException(ErrorCode.PrimaryKeyIsEmpty,
+                $"Primary key type mismatch, source type : {typeof(PKType)}, " +
+                $"target type : {identity.ColumnProperty.PropertyType}");
         }
 
         private string GetLogicDatabaseName<T>() where T : class, new()
@@ -138,7 +145,7 @@ namespace XFramework.Dal
 
             return logicName;
         }
-        
+
         public async Task<int> Insert<T>(T entity) where T : class, new()
         {
             // 获取组装好的sql和参数
@@ -151,15 +158,29 @@ namespace XFramework.Dal
 
             // 如果当前实例含有自增主键，且自增主键的实体不为空，那么需要数据库返回自增住居
             var identity = EntityMetaDataMapper.GetInstance().Get<T>().Columns.Find(p => p.Attribute.Identity);
-
-            if (identity != null && identity.ColumnProperty.GetValue(entity) != null)
+            
+            if (identity != null && identity.Attribute.Identity && identity.ColumnProperty.GetValue(entity) == null)
             {
                 hints.Add(DalHint.SetIdentity);
             }
 
             var result = await client.Execute(sql, parameters, hints);
+
             // 如果数据库返回了主键，那么将主键设置回实体
-            if (result.Identity > 0) identity.ColumnProperty.SetValue(entity, result.Identity);
+            // 暂时先这么写
+            if (result.Identity > 0)
+            {
+                if (identity.ColumnProperty.PropertyType == typeof(int?))
+                {
+                    int.TryParse(result.Identity.ToString(), out var value);
+                    identity.ColumnProperty.SetValue(entity, value);
+                }
+                else
+                {
+                    long.TryParse(result.Identity.ToString(), out var value);
+                    identity.ColumnProperty.SetValue(entity, value);
+                }
+            }
 
             return result.ReturnCode;
         }
@@ -192,10 +213,14 @@ namespace XFramework.Dal
             // 获取组装好的sql和参数
             (string sql, List<DatabaseParameter> parameters) =
                 SqlBuilderFactory.GetInstance<T>().BuildSelect<T>(link, recordCount);
-
             var dataSet = await DalClientFactory.GetClient(GetLogicDatabaseName<T>()).Query(sql, parameters);
 
             return mapper.Convert<T>(dataSet);
+        }
+
+        public async Task<T> QueryByPk<T>(int value) where T : class, new()
+        {
+            return await QueryByPk(BuildCriteria<T, int>(value));
         }
     }
 }

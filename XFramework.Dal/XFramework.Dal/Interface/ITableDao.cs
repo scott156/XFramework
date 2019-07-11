@@ -12,6 +12,8 @@ namespace XFramework.Dal.Interface
 
         Task<T> QueryByPk<T>(long value) where T : class, new();
 
+        Task<T> QueryByPk<T>(int value) where T : class, new();
+
         Task<T> QueryByPk<T>(T criteria) where T : class, new();
 
         Task<int> Insert<T>(T entity) where T : class, new();

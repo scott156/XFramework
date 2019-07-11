@@ -98,9 +98,9 @@ namespace XFramework.Dal.DalClient
                     // 是否需要设置传回主键
                     if (DalHints.IsSet(dalHints, DalHint.SetIdentity))
                     {
-                        using (var identityCommand = new MySqlCommand("SELECT @@Indentity;", conn))
+                        using (var identityCommand = new MySqlCommand("SELECT @@Identity;", conn))
                         {
-                            result.Identity = (long)await identityCommand.ExecuteScalarAsync();
+                            result.Identity = (ulong)await identityCommand.ExecuteScalarAsync();
                         }
                     }
 
